@@ -70,7 +70,7 @@ class CustomerService:
     
     @classmethod
     def getAllCustomersLocations(cls):
-        responseData = cls.customerDAO.getAllLocations()
+        responseData = cls.customerDAO.getAllCustomers()
         print("Customers", responseData)
         return responseData
     

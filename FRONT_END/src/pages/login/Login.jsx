@@ -39,7 +39,7 @@ const Login = () => {
       // navigate("/")       //useNavigate hook (provided by React Router) to redirect the user to the home page ("/")
     
       if (res.data.res.user_role == 1) {
-        navigate("/") 
+        navigate("/Home") 
       } else if (res.data.res.user_role == 2) {
         navigate("/adminhome") 
       }
