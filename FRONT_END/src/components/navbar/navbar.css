@@ -1,5 +1,5 @@
 .navbar {
-    height: 50px;
+    height: 80px;
     background-color: #003580;
     display: flex;
     justify-content: center;
@@ -16,12 +16,43 @@
 
 .logo {
     font-weight: 500;
+    font-size: large;
+    font-style: italic;
+    font-size: 32px;
 }
 
-.navButton {
+/* .navButton {
     margin-left: 20px;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     color: #003580;
-}
+} */
+
+.navButton{
+    background-color: white;
+    width: 5%;
+    height: 10%;
+    border-color: #ebebeb;
+    border-width: 2px;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:15px;
+    /* font-weight: 700; */
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 20px;
+    min-width: 5px;
+    outline: none;
+    overflow: hidden;
+    /* padding: 3px 10px; */
+    /* position: relative; */
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
