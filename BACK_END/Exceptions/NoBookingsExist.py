@@ -1,0 +1,2 @@
+class NoBookingsExist(Exception):
+    pass

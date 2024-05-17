@@ -1,0 +1,2 @@
+class NewPasswordCannotBeSameAsOldPassword(Exception):
+    pass

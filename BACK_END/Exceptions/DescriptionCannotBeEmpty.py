@@ -1,0 +1,2 @@
+class DescriptionCannotBeEmpty(Exception):
+    pass

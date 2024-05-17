@@ -1,0 +1,2 @@
+class CustomerNotLoggedIn(Exception):
+    pass

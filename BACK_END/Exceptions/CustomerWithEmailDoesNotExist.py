@@ -1,0 +1,2 @@
+class CustomerWithEmailDoesNotExist(Exception):
+    pass

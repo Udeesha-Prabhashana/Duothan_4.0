@@ -1,0 +1,31 @@
+.home2{
+    display: flex;    //home class is sidebar 
+
+    .homeContainer2{ //homeContainer class is navbar 
+
+        flex: 6;     //used to divide both sidebar and navbar 
+    }
+
+    .widgets , .charts{
+        display: flex;    //use to get horizontal given datas
+        padding: 20px;
+        gap: 20px;   //get the space
+    }
+
+    .charts{
+        padding: 5px 20px;        
+    }
+
+    .listContainer{
+        -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);    //use to get some box to write some contient in side the box
+        box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+        padding: 20px;
+        margin: 20px;
+
+        .listTitle{
+            font-weight: 500;
+            color: gray;
+            margin-bottom: 15px;
+        }
+    }
+}

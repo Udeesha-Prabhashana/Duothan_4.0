@@ -1,0 +1,2 @@
+class PasswordTooShort(Exception):
+    pass

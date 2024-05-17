@@ -1,0 +1,2 @@
+class SomethingWentWrong(Exception):
+    pass

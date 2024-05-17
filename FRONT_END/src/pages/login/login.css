@@ -1,0 +1,62 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/wallpaper8.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.9;
+
+    .lContainer {
+        width: 400px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        box-shadow:
+            0px 0px 10px rgba(0, 0, 0, 0.3),
+            0px 4px 6px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 330px;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(100px);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 3px;
+    }
+
+    .header {
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .lInput {
+        width: 90%;
+        margin-bottom: 9px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .lButton {
+        display: block;
+        width: 98%;
+        padding: 10px;
+        background-color: #2155CD;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow:
+            0px 0px 10px rgba(0, 0, 0, 0.3),
+            0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .lButton:hover {
+        background-color: #0AA1DD;
+    }
+}

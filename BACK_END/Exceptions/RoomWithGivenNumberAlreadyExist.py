@@ -1,0 +1,2 @@
+class RoomWithGivenNumberAlreadyExist(Exception):
+    pass
