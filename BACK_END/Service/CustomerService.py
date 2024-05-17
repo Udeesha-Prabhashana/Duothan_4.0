@@ -63,6 +63,18 @@ class CustomerService:
         return responseData
 
     @classmethod
+    def getAllCustomersfromDBCheck(cls):
+        responseData = cls.customerDAO.getAllCustomers()
+        print("Customers", responseData)
+        return responseData
+    
+    @classmethod
+    def getAllCustomersLocations(cls):
+        responseData = cls.customerDAO.getAllLocations()
+        print("Customers", responseData)
+        return responseData
+    
+    @classmethod
     def createCustomer(cls, data):
         global responseData
         z = data.get('name')
@@ -97,7 +109,8 @@ class CustomerService:
                         responseData = cls.customerDAO.createNewCustomer(data.get('name'), data.get('username'),
                                                                              hashedPassword,
                                                                              data.get('email'),
-                                                                             data.get('contact_no'))
+                                                                             data.get('contact_no'),
+                                                                             data.get('vehical_number'))
                         # cls.emailService.custCreateMail(responseData.get('customer_id'), responseData.get('email'))
                         return "Registration successful!"
                     else:

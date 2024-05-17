@@ -24,18 +24,19 @@ const Sidebar = () => {
     return (
         <div className="Sidebar">
             <div className="top">
-                <Link to="/" style={{ textDecoration: "none" }}>
-                  <span className="logo">WH booking</span>
-                </Link>
+
+                  <span className="logo">Neotropolis</span>
             </div>
             <hr/>         {/*  hr use to get line */}
             <div className="center">
                 <ul>
                     <p className="title">MAIN</p>
+                    <Link to="/adminhome">
                     <li>
                         <DashboardIcon className="icon" />
                         <span> Dashboard</span>
                     </li>    
+                    </Link>
                     <p className="title">LIST</p>
                     <Link to="/users" style={{ textDecoration: "none"}}>
                     {/* <li>
@@ -43,22 +44,24 @@ const Sidebar = () => {
                         <span> Users </span>
                     </li> */}
                     </Link>
-                    <Link to="/hotels" style={{ textDecoration: "none" }}>    
+                    <Link to="/customers" style={{ textDecoration: "none" }}>    
                     <li>
-                        <StoreIcon className="icon" />
-                        <span> Hotels</span>
+                        <Person2OutlinedIcon className="icon" />
+                        <span> Costomers</span>
                     </li>                
                     </Link>
                     <Link to="/rooms" style={{ textDecoration: "none" }}>
                     <li>
-                        <CreditCardIcon className="icon" />
-                        <span> Rooms</span>
+                        <LocalShippingIcon className="icon" />
+                        <span> Vehicals</span>
                     </li>
                     </Link>
+                    <Link to="/locations" style={{ textDecoration: "none" }}>
                     <li>
-                        <LocalShippingIcon className="icon" />
-                        <span> Dilivery</span>
+                        <CreditCardIcon className="icon" />
+                        <span> Locations</span>
                     </li>
+                    </Link>
                     <p className="title">USEFUL</p>
                     <li>
                         <NotificationsNoneIcon className="icon" />

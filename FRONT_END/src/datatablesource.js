@@ -41,26 +41,26 @@ export const userColumns = [
 
 ];
 
-export const hotelColumns = [
-  { field: "hotel_id", headerName: "ID", width: 250 },
+export const usersColumns = [
+  { field: "customer_id", headerName: "ID", width: 250 },
   {
-    field: "name",
-    headerName: "Name",
+    field: "dtp_id",
+    headerName: "DTP_NO",
     width: 150,
   },
   {
-    field: "type",
-    headerName: "Type",
+    field: "name",
+    headerName: "Name",
     width: 100,
   },
   {
-    field: "title",
-    headerName: "Title",
+    field: "email",
+    headerName: "E-mail",
     width: 230,
   },
   {
-    field: "city",
-    headerName: "City",
+    field: "contact_no",
+    headerName: "contact_no",
     width: 100,
   },
 ];
