@@ -85,109 +85,12 @@ def customerLogin():
     except WrongCredentials:
         return jsonify({'error': 'Wrong credentials'}), 401
     
-#hotels
-
-@app.route('/addhotel', methods=['POST'])
-def addhotel():
-    wsResponse = {"resultSet": None}
-    print("request", request.json)
-    responseData = HotelService.addHotel(request.json)
-    wsResponse['resultSet'] = responseData
-
-    return wsResponse
-
-@app.route("/hotels", methods=['GET'])
-def getAllHotels():
-    Response = HotelService.getAllHotelsfromDBCheck()   
-    print("Hotels3", Response) 
-    return jsonify(Response)
 
 @app.route("/customers", methods=['GET'])
 def getAllCustomers():
     Response = CustomerService.getAllCustomersfromDBCheck()   
     print("Hotels3", Response) 
     return jsonify(Response)
-
-@app.route("/locations", methods=['GET'])
-def getAllCustomerslocations():
-    Response = CustomerService.getAllCustomersLocations()   
-    print("Hotels3", Response) 
-    return jsonify(Response)
-
-
-@app.route("/getAllFilterdHotels", methods=['GET'])
-def getAllFiltedHotels():
-    city = request.args.get('city', default=None)
-    min_price = request.args.get('min', default=0, type=int)
-    max_price = request.args.get('max', default=999, type=int)
-
-    response = HotelService.getAllHotelsfromDBCheck23(city, min_price, max_price)   
-    print("Hotels3", response) 
-    return jsonify(response)
-
-@app.route("/getHotelByID", methods=['GET'])
-def getHotelByID():
-    id = request.args.get('id', default=None)
-
-    response = HotelService.gethotelbyID(id)   
-    print("Hotels3", response) 
-    return jsonify(response[0])
-
-@app.route("/DeleteHotel", methods=['POST'])
-def DeleteHOtel():
-    Response = HotelService.deleteHotel(request.json)   
-    print("Response", Response) 
-    return jsonify(Response)
-
-
-#Rooms
-
-@app.route("/getRooms", methods=['GET'])
-def getRoomsByID():
-    id = request.args.get('hotelId', default=None)
-
-    response = RoomService.getAllRoomsByID(id)   
-    print("Hotels3", response) 
-    return jsonify(response)
-
-@app.route('/addroom', methods=['POST'])
-def addroom():
-    wsResponse = {"resultSet": None}
-    print("request", request.json)
-    responseData = RoomService.addroom(request.json)
-    wsResponse['resultSet'] = responseData
-
-    return wsResponse
-
-@app.route("/rooms", methods=['GET'])
-def getAllRooms():
-
-    response = RoomService.getAllRooms()   
-    print("Hotels3", response) 
-    return jsonify(response)
-
-def convert_timestamps_to_dates(timestamps):
-    return [datetime.fromtimestamp(timestamp / 1000) for timestamp in timestamps]
-
-
-@app.route("/updateRoomAvailable", methods=['POST'])
-def RoomAvailable():
-
-    roomid = request.args.get('roomid', default=None)
-    roomnumber = request.args.get('roomnumber', default=None)
-    # Parse request.json into a Python dictionary
-    # Get the dates array from the request.json dictionary
-    dates = request.json['dates']
-
-    # Call the function with the dates array
-    converted_dates = convert_timestamps_to_dates(dates)
-    # Format the dates as strings in the desired format
-    formatted_dates = [date.strftime('%Y-%m-%d %H:%M:%S') for date in converted_dates]
-    print("converted_dates", formatted_dates)
-    
-    response = RoomService.updateRoomAvailble(roomid , roomnumber , formatted_dates)   
-    print("Hotels3", response) 
-    return jsonify(response)
 
 if __name__ == "__main__":
     app.run(debug=True)

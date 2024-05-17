@@ -148,7 +148,7 @@ class CustomerDAO:
             columns = [column[0] for column in cursor.description]
             result = [dict(zip(columns, row)) for row in rows]
 
-            print("locations", result)
+            print("Customers", result)
             return result
         except Exception as e:
 

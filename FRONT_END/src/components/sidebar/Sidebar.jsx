@@ -72,10 +72,10 @@ const Sidebar = () => {
                         <span> Stats</span>
                     </li>
                     <p className="title">SERVICE</p>
-                    <li>
+                    {/* <li>
                         <SettingsSystemDaydreamOutlinedIcon className="icon" />
                         <span> System Health</span>
-                    </li>
+                    </li> */}
                     <li>
                         <PsychologyOutlinedIcon className="icon" />
                         <span> Logs</span>
