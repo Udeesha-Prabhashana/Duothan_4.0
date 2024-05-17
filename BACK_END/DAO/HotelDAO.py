@@ -77,6 +77,28 @@ class HotelDAO:
             cursor.close()
             conn.close()
 
+
+    @classmethod
+    def getAllCustomers(cls):
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT * from customer")
+            rows = cursor.fetchall()
+
+            # Assuming cursor.description is available to get column names
+            columns = [column[0] for column in cursor.description]
+            result = [dict(zip(columns, row)) for row in rows]
+
+            print("Customers", result)
+            return result
+        except Exception as e:
+
+            print(e)
+        finally:
+            cursor.close()
+            conn.close()
+
     @classmethod
     def getAllFilterdHotels(cls, city, min_price, max_price):
         try:

@@ -102,6 +102,18 @@ def getAllHotels():
     print("Hotels3", Response) 
     return jsonify(Response)
 
+@app.route("/customers", methods=['GET'])
+def getAllCustomers():
+    Response = CustomerService.getAllCustomersfromDBCheck()   
+    print("Hotels3", Response) 
+    return jsonify(Response)
+
+@app.route("/locations", methods=['GET'])
+def getAllCustomerslocations():
+    Response = CustomerService.getAllCustomersLocations()   
+    print("Hotels3", Response) 
+    return jsonify(Response)
+
 
 @app.route("/getAllFilterdHotels", methods=['GET'])
 def getAllFiltedHotels():

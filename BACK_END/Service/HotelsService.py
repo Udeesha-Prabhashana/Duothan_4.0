@@ -26,6 +26,12 @@ class HotelService:
         responseData = cls.hotelDAO.getAllHotels()
         print("Hotel2", responseData)
         return responseData
+    
+    @classmethod
+    def getAllCustomersfromDBCheck(cls):
+        responseData = cls.hotelDAO.getAllCustomers()
+        print("Customers", responseData)
+        return responseData
 
     @classmethod
     def getAllHotelsfromDBCheck23(cls, city, min_price, max_price):

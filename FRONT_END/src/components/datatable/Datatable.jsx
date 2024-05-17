@@ -19,7 +19,7 @@ const Datatable = ({ columns }) => {
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://127.0.0.1:5000/${path}/${id}`);
-      setList(list.filter((item) => item.hotel_id !== id)); // Use hotel_id here
+      setList(list.filter((item) => item.customer_id !== id)); // Use hotel_id here
     } catch (err) {
       console.error('Error deleting item:', err);
     }
@@ -33,10 +33,10 @@ const Datatable = ({ columns }) => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to={`/${path}/${params.row.hotel_id}`} style={{ textDecoration: "none" }}>
+            <Link to={`/${path}/${params.row.customer_id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
-            <div className="deleteButton" onClick={() => handleDelete(params.row.hotel_id)}>
+            <div className="deleteButton" onClick={() => handleDelete(params.row.customer_id)}>
               Delete
             </div>
           </div>
@@ -63,7 +63,7 @@ const Datatable = ({ columns }) => {
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
-        getRowId={(row) => row.hotel_id} // Use hotel_id as the unique identifier
+        getRowId={(row) => row.customer_id} // Use hotel_id as the unique identifier
       />
     </div>
   );

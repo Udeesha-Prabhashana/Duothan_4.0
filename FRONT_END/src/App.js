@@ -3,12 +3,13 @@ import Home from "./pages/home/Home";
 import List from "./pages/list/List";
 import Hotel from "./pages/hotel/Hotel";
 import Login from "./pages/login/Login";
+import Location from "./pages/locations/locations";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { DarkModeContext } from "./context/darkModeContext";
 
 import Home2 from "./pages/homeA/HomeA";
-import { hotelColumns, roomColumns, userColumns } from "./datatablesource";
+import { roomColumns, userColumns, usersColumns } from "./datatablesource";
 import List2 from "./pages/listA/ListA";
 import Listroom from "./pages/listrooms/ListB";
 import Single from "./pages/single/Single";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/hotel" element={<List />} />
           <Route path="/hotels/:id" element={<Hotel />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/locations" element={<Location />} />
           <Route
             path="adminhome"
             index
@@ -82,17 +84,17 @@ function App() {
               }
             />
           </Route>
-          <Route path="hotels">
+          <Route path="customers">
             <Route
               index
               element={
                 <ProtectedRoute>
-                  <List2 columns={hotelColumns} />
+                  <List2 columns={usersColumns} />
                 </ProtectedRoute>
               }
             />
             <Route
-              path=":productId"
+              path=":userId"
               element={
                 <ProtectedRoute>
                   <Single />
@@ -103,7 +105,7 @@ function App() {
               path="new"
               element={
                 <ProtectedRoute>
-                  <NewHotel inputs={hotelInputs} title="Add New Hotel" />
+                  <NewHotel inputs={hotelInputs} title="Add New User" />
                 </ProtectedRoute>
               }
             />

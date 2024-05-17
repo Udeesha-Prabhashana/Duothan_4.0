@@ -5,7 +5,7 @@ import json
 from flask import jsonify
 from db_config import get_db_connection
 import logging
-
+import random
 
 class CustomerDAO:
 
@@ -108,11 +108,60 @@ class CustomerDAO:
             cursor.close()
             connection.close()
 
+        @classmethod
+        def getAllCustomersfromDBCheck(cls):
+            responseData = cls.hotelDAO.getAllCustomers()
+            print("Customers", responseData)
+            return responseData
 
     @classmethod
-    def createNewCustomer(cls, name, username, password, email, contact_no):
+    def getAllCustomers(cls):
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT * from customer")
+            rows = cursor.fetchall()
+
+            # Assuming cursor.description is available to get column names
+            columns = [column[0] for column in cursor.description]
+            result = [dict(zip(columns, row)) for row in rows]
+
+            print("Customers", result)
+            return result
+        except Exception as e:
+
+            print(e)
+        finally:
+            cursor.close()
+            conn.close()
+
+            
+    @classmethod
+    def getAllLocations(cls):
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute("SELECT pickup_location, ST_Y(location) AS latitude, ST_X(location) AS longitude FROM locations")
+            rows = cursor.fetchall()
+
+            # Assuming cursor.description is available to get column names
+            columns = [column[0] for column in cursor.description]
+            result = [dict(zip(columns, row)) for row in rows]
+
+            print("locations", result)
+            return result
+        except Exception as e:
+
+            print(e)
+        finally:
+            cursor.close()
+            conn.close()
+
+    @classmethod
+    def createNewCustomer(cls, name, username, password, email, contact_no, vehical_number ):
         try:
             # customerId = int(uuid.uuid4())
+            dtp_id = random.randint(1, 1000000)
 
             # print("IDD", customerId)
             connection = get_db_connection()
@@ -120,9 +169,19 @@ class CustomerDAO:
 
             cursor.execute(
                 "insert into customer (dtp_id,name,username,password,email,contact_no,user_role) value (%s, %s, %s,%s, %s, %s,%s)",
-                (12,name, username, password, email, contact_no,1))
+                (dtp_id,name, username, password, email, contact_no,1))
             connection.commit()
 
+            # Retrieve the generated customer_id
+            cursor.execute("SELECT LAST_INSERT_ID()")
+            customer_id = cursor.fetchone()[0]
+
+            print("ID", customer_id)
+
+            cursor.execute(
+                "insert into vehicals (vehical_number,user_id) value (%s, %s)",
+                (vehical_number,customer_id))
+            connection.commit()
             return 1
         except Exception as e:
             print(e)
