@@ -1,5 +1,5 @@
 .navbar {
-    height: 50px;
+    height: 80px;
     background-color: #003580;
     display: flex;
     justify-content: center;
@@ -16,12 +16,57 @@
 
 .logo {
     font-weight: 500;
+    font-size: large;
+    font-style: italic;
+    font-size: 32px;
 }
 
-.navButton {
+/* .navButton {
     margin-left: 20px;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     color: #003580;
+} */
+.newItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+.navButton{
+    background-color: 	transparent;
+    /* background-color: 	#18181a; */
+    border-radius: 4px;
+    border-style: none;
+    border-width: 2px;
+    color: white;
+    box-sizing: border-box;
+    border-color: #838383;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-size:16px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: none;
+    min-height: 20px;
+    min-width: 5px;
+    outline: none;
+    overflow: hidden;
+    padding: 3px 10px;
+    text-align: center;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    /* width: 100%;  */
+    margin: 3px; 
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    
+    }
+
+    .navButton:hover{
+        background-color: #838383;
+        color: #003580;
+    }
