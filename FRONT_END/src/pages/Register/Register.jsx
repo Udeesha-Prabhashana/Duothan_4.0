@@ -11,6 +11,7 @@ const Register = () => {
     email: undefined,
     name: undefined,
     contact_no: undefined,
+    vehicle_reg_no: undefined,
   });
 
   const { user,loading, error, dispatch } = useContext(AuthContext); //
@@ -39,7 +40,7 @@ const Register = () => {
   return (
     <div className="login">
       <div className="lContainer">
-        <h3 className='header'> REGISTER</h3>
+        <h3 className='header'> REGISTER TO NEOTROPOLIS</h3>
         <span> USERNAME</span>
         <input
           type="text"
@@ -77,6 +78,14 @@ const Register = () => {
           type="tel"
           placeholder="Enter contact number"
           id="contact_no"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <span>VEHICLE REG NO</span>
+        <input
+          type="tel"
+          placeholder="Enter vehicle reg number"
+          id="vehiclE_reg_no"
           onChange={handleChange}
           className="lInput"
         />
