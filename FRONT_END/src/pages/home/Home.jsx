@@ -14,13 +14,9 @@ const Home = () => {
             <Navbar />
             <Header />
             <div className="homeContainer">
-                {/* <h1 className="homeTitle"> Cities</h1>  */}
                 <Featured />
-                {/* <Featured2 /> */}
-                {/* <h1 className="homeTitle"> Brows by properties</h1> */}
-                {/* <PropertyList /> */}
-                {/* <h1 className="homeTitle"> home guest love</h1>
-                <FeaturesProperties /> */}
+                <PropertyList />
+              
                 {/* <MailList /> */}
                 {/* <Footer/> */}
             </div>

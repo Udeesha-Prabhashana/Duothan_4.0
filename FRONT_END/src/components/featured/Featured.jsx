@@ -14,13 +14,18 @@ const Featured = () => {
 
                     <div className="ticket">
                         <div className="ticket-content">
-                            <h1 className="ticketid">T035</h1>
+                            <div className="ticket-id">
+                                <h2>Ticket ID: </h2>
+                                <h1 className="ticketid">T035</h1>
+
+                            </div>
                             <h3 className="username">User name</h3>
                         </div>
 
                         <div className="ticket-logo">
                             <h1>Neotripolis Parkingslot</h1>
                         </div>
+                        
                     </div>
 
 
