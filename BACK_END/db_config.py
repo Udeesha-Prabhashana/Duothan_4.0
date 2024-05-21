@@ -6,6 +6,6 @@ def get_db_connection():
         port='3312',
         database='duothan',
         user='root',
-        password='Udee1234@#'
+        password=''
     )
     return connection
